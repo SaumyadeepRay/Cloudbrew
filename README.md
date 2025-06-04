@@ -1,16 +1,32 @@
-# weatherapp
+# Cloudbrew
 
-A new Flutter project.
+Cloudbrew is a sleek and user-friendly weather application built using **Flutter**, designed to provide accurate and up-to-date weather information for any location worldwide. The app leverages the power of the **WeatherStack API** to fetch real-time weather data, ensuring users stay informed about current conditions, forecasts, and other relevant weather details.
+
+## Features
+
+- **Real-time Weather Updates:** Get the latest weather data for any city or location globally.
+- **Detailed Weather Information:** Includes temperature, humidity, wind speed, weather conditions, and more.
+- **Clean and Intuitive UI:** Designed with Flutter for a smooth and responsive user experience across both Android and iOS devices.
+- **Search Functionality:** Easily search for cities to get their weather details.
+- **Error Handling:** Gracefully handles API errors or location issues to maintain a seamless user experience.
+
+## Technologies Used
+
+- **Flutter:** For cross-platform mobile app development.
+- **WeatherStack API:** To retrieve accurate and current weather data.
+- **Dart:** Primary programming language for app logic.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone the repository:
+   
+   ```bash
+   git clone <repository-url>
 
-A few resources to get you started if this is your first Flutter project:
+2. Obtain an API key from WeatherStack.
+3. Add your API key in the appropriate configuration file (e.g., lib/constants.dart or wherever you store your API key).
+4. Run the app on your emulator or physical device:
+ 
+   ```bash
+   flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
