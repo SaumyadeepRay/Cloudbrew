@@ -92,22 +92,22 @@ class WeatherDetailsModel {
 
 class Current {
   String observationTime;
-  int temperature;
-  int weatherCode;
+  dynamic temperature;
+  dynamic weatherCode;
   List<String> weatherIcons;
   List<String> weatherDescriptions;
   Astro astro;
   AirQuality airQuality;
-  int windSpeed;
-  int windDegree;
+  dynamic windSpeed;
+  dynamic windDegree;
   String windDir;
-  int pressure;
-  int precip;
-  int humidity;
-  int cloudcover;
-  int feelslike;
-  int uvIndex;
-  int visibility;
+  dynamic pressure;
+  dynamic precip;
+  dynamic humidity;
+  dynamic cloudcover;
+  dynamic feelslike;
+  dynamic uvIndex;
+  dynamic visibility;
   String isDay;
 
   Current({
@@ -226,7 +226,7 @@ class Astro {
   String moonrise;
   String moonset;
   String moonPhase;
-  int moonIllumination;
+  dynamic moonIllumination;
 
   Astro({
     required this.sunrise,
@@ -264,7 +264,7 @@ class Location {
   String lon;
   String timezoneId;
   String localtime;
-  int localtimeEpoch;
+  dynamic localtimeEpoch;
   String utcOffset;
 
   Location({

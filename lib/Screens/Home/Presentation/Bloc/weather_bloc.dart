@@ -9,7 +9,7 @@ import 'package:weatherapp/Screens/Home/Presentation/Bloc/weather_state.dart';
 // Separates business logic (API calls, data handling) from UI, making the app scalable and testable.
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final WeatherUsecase _usecase; // Dependency-injected use case that abstracts weather fetching logic
-  String _currentLocation = "Kolkata"; // Stores the last searched location for retry functionality
+  String? _currentLocation; // Stores the last searched location for retry functionality
 
   // Constructor initializes the BLoC and listens for `FetchWeather` events
   WeatherBloc(this._usecase) : super(WeatherInitial()) {
@@ -19,7 +19,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
       try {
         // Use location from event to the last used location
-        String location = event.location ?? _currentLocation;
+        String location = event.location ?? _currentLocation!;
         _currentLocation = location; // Save current location for retry
 
         // Call the use case to fetch weather details
@@ -38,11 +38,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         AppLog().logMessage(message: "Stacktrace: $stackTrace");
 
         // User-friendly error message
-        String errorMessage = 'Failed to load weather data';
-        if (e.toString().contains('404')) {
-          errorMessage =
-              'City not found. Please check the spelling and try again.';
-        } else if (e.toString().contains('network') ||
+        String errorMessage = 'City not found. Please check the spelling and try again.';
+        if (e.toString().contains('404') || e.toString().contains('network') ||
             e.toString().contains('connection')) {
           errorMessage =
               'Network error. Please check your internet connection.';
@@ -56,5 +53,5 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   // Getter to expose the last searched location
   // Useful for UI to retry the last query or display the current location name
-  String get currentLocation => _currentLocation;
+  String get currentLocation => _currentLocation!;
 }

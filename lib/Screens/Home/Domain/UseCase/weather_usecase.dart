@@ -11,9 +11,7 @@ class WeatherUsecase {
 
   // Method to get weather details for a given location.
   // If no location is provided, defaults to "Kolkata".
-  Future<WeatherDetailsModel> getWeatherDetails({
-    String location = "Kolkata",
-  }) async {
+  Future<WeatherDetailsModel> getWeatherDetails({location}) async {
     // Calls the repository method to fetch data from the data source (e.g., API).
     return await _repository.getWeather(location: location);
   }

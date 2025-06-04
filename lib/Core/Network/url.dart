@@ -6,6 +6,4 @@ class URL {
   // Base URL for the WeatherStack API
   static const String baseUrl = 'http://api.weatherstack.com';
 
-  // Endpoint for fetching current weather data
-  static const String depots = '$baseUrl/current';
 }

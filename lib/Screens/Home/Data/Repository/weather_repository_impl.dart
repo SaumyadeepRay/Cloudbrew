@@ -16,10 +16,10 @@ class WeatherRepositoryImpl implements WeatherRepository {
   // Implements the getWeather method from the abstract repository.
   // This method calls the remote data source to fetch weather data for the given location.
   @override
-  Future<WeatherDetailsModel> getWeather({String location = "Kolkata"}) async {
+  Future<WeatherDetailsModel> getWeather({String? location}) async {
     try {
       // Fetch the weather data using the remote data source and return it.
-      return await _remoteDataSource.getWeatherData(location);
+      return await _remoteDataSource.getWeatherData(location!);
     } catch (e) {
       // Log the error for debugging and observability purposes.
       AppLog().logMessage(message: 'Repository error: $e');

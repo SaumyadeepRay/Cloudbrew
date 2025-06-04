@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     // Initial API call for Kolkata
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<WeatherBloc>().add(const FetchWeather(location: "Kolkata"));
+      context.read<WeatherBloc>().add(FetchWeather(location: currentLocation));
     });
   }
 
